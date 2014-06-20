@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两栏CSS自适应布局</title>
+	<style>
+	*{margin: 0;padding: 0;}
+
+	.wrapper { margin: 20px; border: 1px solid #ededed; height: 120px; padding: 2px; }
+	#box-mr-fr .box-left { background: #aaa; margin-right: 300px; height: 100%; }
+	#box-mr-fr .box-right { width: 298px; float: right; background: #ddd; height: 100%; }
+
+	#box-mr-ab{position: relative;}
+	#box-mr-ab .box-left { background: #ddd; height: 100%; margin-right: 300px; }
+	#box-mr-ab .box-right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 2px 2px 20px 0;/* * 绝对定位元素margin-bottom无效 * */
+		width: 298px;
+		height: 119px; /* * 为什么这个高度要自行设定 * */
+		background: #aaa;
+	}
+
+	#box-fr_negm { }
+	#box-fr_negm .box-left { float: left; height: 100%; width: 100%; }
+	.box-left .left-con{
+		margin-right: 302px;
+		height: 100%;
+		background: #ddd;
+	}
+	#box-fr_negm .box-right { width: 300px; float: right; background: #aaa; height: 100%; margin-left: -300px; }
+	</style>
+</head>
+<body>
+	<!-- 右侧固定, 左侧自适应(右侧浮动+左侧margin-right) -->
+	<!-- 由于浮动特性, 浮动元素需在非浮动元素之上-->
+	<h2>右侧固定, 左侧自适应(右侧浮动+左侧margin-right)</h2>
+	<div id="box-mr-fr" class="wrapper">
+		<div class="box-right">右边框</div>
+		<div class="box-left">左边框</div>
+	</div>
+
+	<!-- 右侧采用绝对定位,左侧margin-right -->
+	<h2>右侧采用绝对定位,左侧margin-right</h2>
+	<div id="box-mr-ab" class="wrapper">
+		<div class="box-left">左边框</div>
+		<div class="box-right">右边框</div>
+	</div>
+
+	<!-- 右侧浮动 且用负margin值 -->
+	<h2>右侧浮动 且用负margin值</h2>
+	<div id="box-fr_negm" class="wrapper">
+		<div class="box-left">
+			<div class="left-con">左边框</div>
+		</div>
+		<div class="box-right">右边框</div>
+	</div>
+</body>
+</html>
