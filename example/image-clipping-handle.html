@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片剪裁</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	.wrapper { margin: 20px; border: 1px solid #ededed; padding: 2px; }
+
+	#body{padding:0; overflow:hidden;}
+	#body .part { min-height: 420px; _height: 420px; background: white; }
+
+	#effect { float: left;width: 70% margin-right: -1px; margin-bottom: -999em; padding-bottom: 999em; }
+	#effect img { margin-top: 45px; margin-left: 35px; }
+	#effect div { margin-top: 10px; margin-left: 35px; }
+	#upload { border: 1px solid; height: 35px; padding: 6px; }
+	#effect span { display: block; margin-top: 8px; color: gray; }
+
+	#show { float: right; width: 30% margin-left:-1px; margin-bottom: -999em; padding-bottom: 999em; }
+	#show h3{margin-top: 40px;}
+	#show ul{padding: 16px;}
+	#show li{text-align: center;list-style: none;}
+
+	#show li img, #show li span{display: block;}
+	#show li img{margin: 8px auto;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<section id="body">
+			<div id="effect" class="part">
+				<img src="" width="300" height="300"/>
+
+				<div class="upload">
+					<input type="button" value="上传本地文件" id="upload"/>
+					<span class="info">注意：支持JPG、JPEG、GIF、PNG等格式，最大5M</span>
+				</div>
+			</div>
+
+			<div id="show" class="part">
+				<h3>预览：</h3>
+				<ul>
+					<li>
+						<img src="" width="60" height="60"/>
+						<span>60 * 60</span>
+					</li>
+					<li>
+						<img src="" width="80" height="80"/>
+						<span>80 * 80</span>
+					</li>
+					<li>
+						<img src="" width="100" height="100"/>
+						<span>100 * 100</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
